@@ -1,0 +1,77 @@
+\documentclass[a4paper]{article}
+% Kodowanie latain 2
+%\usepackage[latin2]{inputenc}
+\usepackage[T1]{fontenc}
+% Można też użyć UTF-8
+\usepackage[utf8]{inputenc}
+
+% Język
+\usepackage[polish]{babel}
+% \usepackage[english]{babel}
+
+% Rózne przydatne paczki:
+% - znaczki matematyczne
+\usepackage{amsmath, amsfonts}
+% - wcięcie na początku pierwszego akapitu
+\usepackage{indentfirst}
+% - komenda \url 
+\usepackage{hyperref}
+% - dołączanie obrazków
+\usepackage{graphics}
+% - szersza strona
+\usepackage[nofoot,hdivide={2cm,*,2cm},vdivide={2cm,*,2cm}]{geometry}
+\frenchspacing
+% - brak numerów stron
+\pagestyle{empty}
+
+% dane autora
+\author{Łukasz Kulczycki}
+\title{Sprawdzian PWI}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Zadanie}
+\begin{verbatim}
+ssh-keygen
+ssh-copy-id -i ~/mykey mpyzik@pwi.ii.uni.wroc.pl
+ssh 'mpyzik@pwi.ii.uni.wroc.pl'
+\end{verbatim}
+
+\section{Zadanie}
+\begin{verbatim}
+ls
+ls -R
+mkdir lukasz_kulczycki
+touch lukasz_kulczycki.txt
+nano lukasz_kulczycki.txt
+less lukasz_kulczycki.txt
+seq 0 7 100 >> lukasz_kulczycki.txt
+exit
+scp mpyzik@pwi.ii.uni.wroc.pl:/home/mpyzik/lukasz_kulczycki/testy/lukasz_kulczycki.txt 
+/mnt/c/Users/^_^/Desktop/sprawdzian/
+ssh 'mpyzik@pwi.ii.uni.wroc.pl'
+\end{verbatim}
+
+\section{Zadanie}
+\begin{verbatim}
+mkdir dane
+cd dane
+hexdump /dev/urandom | head > plik1.txt
+hexdump /dev/urandom | head > plik2.txt
+hexdump /dev/urandom | head > plik3.txt
+hexdump /dev/urandom | head > plik4.txt
+hexdump /dev/urandom | head > plik5.txt
+touch concat.txt
+cat plik1.txt >> concat.txt
+cat plik2.txt >> concat.txt
+cat plik3.txt >> concat.txt
+cat plik4.txt >> concat.txt
+cat plik5.txt >> concat.txt
+grep "^0.*\([a-z0-9][a-z0-9]\)\1$" concat.txt >> output.txt
+wc -l output.txt concat.txt
+exit
+\end{verbatim}
+
+\end{document}
