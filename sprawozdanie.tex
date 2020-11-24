@@ -69,7 +69,7 @@ cat plik2.txt >> concat.txt
 cat plik3.txt >> concat.txt
 cat plik4.txt >> concat.txt
 cat plik5.txt >> concat.txt
-grep "^0.*\([a-z0-9][a-z0-9]\)\1$" concat.txt >> output.txt
+grep "^0.*\([a-f0-9][a-f0-9]\)\1$" concat.txt >> output.txt
 wc -l output.txt concat.txt
 exit
 \end{verbatim}
